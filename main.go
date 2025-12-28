@@ -4,29 +4,29 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/ViktorEjik/my-loggermy/pkg/loger"
+	logger "github.com/ViktorEjik/my-loggermy/pkg/logger"
 )
 
 func main() {
-	var levels = [...]loger.LogLevel{loger.Debug, loger.Info, loger.Warning, loger.Error}
+	var levels = [...]logger.LogLevel{logger.Debug, logger.Info, logger.Warning, logger.Error}
 	for i, value := range levels {
-		err := loger.CreateLoger("tests/PLANE/test"+strconv.Itoa(i)+".txt", value, loger.PLANE)
+		err := logger.CreateLogger("tests/PLANE/test"+strconv.Itoa(i)+".txt", value, logger.PLANE)
 		if err != nil {
 			fmt.Print(err)
 		}
-		loger.WriteLog("Test1", loger.Info)
-		loger.WriteLog("Test3", loger.Debug)
-		loger.WriteLog("Test4", loger.Warning)
-		loger.WriteLog("Test2", loger.Error)
+		logger.WriteLog("Test1", logger.Info)
+		logger.WriteLog("Test3", logger.Debug)
+		logger.WriteLog("Test4", logger.Warning)
+		logger.WriteLog("Test2", logger.Error)
 	}
 	for i, value := range levels {
-		err := loger.CreateLoger("tests/CSV/test"+strconv.Itoa(i)+".txt", value, loger.CSV)
+		err := logger.CreateLogger("tests/CSV/test"+strconv.Itoa(i)+".txt", value, logger.CSV)
 		if err != nil {
 			fmt.Print(err)
 		}
-		loger.WriteLog("Test1", loger.Info)
-		loger.WriteLog("Test3", loger.Debug)
-		loger.WriteLog("Test4", loger.Warning)
-		loger.WriteLog("Test2", loger.Error)
+		logger.WriteLog("Test1", logger.Info)
+		logger.WriteLog("Test3", logger.Debug)
+		logger.WriteLog("Test4", logger.Warning)
+		logger.WriteLog("Test2", logger.Error)
 	}
 }

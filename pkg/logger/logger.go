@@ -32,7 +32,7 @@ var logerCfg struct {
 	logFormat LogFormat
 }
 
-func CreateLoger(path string, minLogLevel LogLevel, logFormat LogFormat) error {
+func CreateLogger(path string, minLogLevel LogLevel, logFormat LogFormat) error {
 	if path == "console" {
 		logerCfg.logFile = os.Stdout
 	} else {
